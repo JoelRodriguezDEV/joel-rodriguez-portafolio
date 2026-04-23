@@ -1,0 +1,982 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
+    />
+    <title>Joel D. Rodriguez | Full Stack Developer</title>
+    <link rel="icon" type="image/png" href="/Front-end/icon/favicon.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    </script>
+  </head>
+  <body class="min-h-screen text-white bg-gray-900">
+    <div id="particles-js"></div>
+
+    <nav
+      class="fixed w-full bg-black bg-opacity-90 backdrop-blur-md z-50 border-b border-gray-800"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <span class="text-2xl font-bold gradient-text futuristic">JR</span>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#home"
+              class="nav-link text-sm uppercase tracking-widest hover:text-cyan-400"
+              data-i18n="nav.home"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="nav-link text-sm uppercase tracking-widest hover:text-cyan-400"
+              data-i18n="nav.about"
+              >About</a
+            >
+            <a
+              href="#projects"
+              class="nav-link text-sm uppercase tracking-widest hover:text-cyan-400"
+              data-i18n="nav.projects"
+              >Projects</a
+            >
+            <a
+              href="#skills"
+              class="nav-link text-sm uppercase tracking-widest hover:text-cyan-400"
+              data-i18n="nav.skills"
+              >Skills</a
+            >
+            <a
+              href="#certifications"
+              class="nav-link text-sm uppercase tracking-widest hover:text-cyan-400"
+              data-i18n="nav.certifications"
+              >Certifications</a
+            >
+            <a
+              href="#contact"
+              class="nav-link text-sm uppercase tracking-widest hover:text-cyan-400"
+              data-i18n="nav.contact"
+              >Contact</a
+            >
+            <button
+              id="lang-toggle-desktop"
+              class="border border-cyan-400 text-cyan-400 px-3 py-1 rounded hover:bg-cyan-400 hover:text-black transition text-xs font-bold"
+            >
+              ES
+            </button>
+          </div>
+          <div class="md:hidden flex items-center">
+            <button
+              id="menu-toggle"
+              class="text-white p-2 focus:outline-none hover:text-cyan-400 transition"
+            >
+              <svg
+                class="h-8 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      id="menu-backdrop"
+      class="fixed inset-0 hidden z-40 transition-opacity duration-300"
+    ></div>
+
+    <div
+      id="mobile-menu"
+      class="mobile-menu fixed right-0 top-0 bottom-0 w-3/4 max-w-sm bg-black z-50 p-6 border-l border-gray-800 shadow-2xl flex flex-col"
+    >
+      <div class="flex justify-between items-center mb-8">
+        <button
+          id="lang-toggle-mobile"
+          class="border border-cyan-400 text-cyan-400 px-4 py-2 rounded hover:bg-cyan-400 hover:text-black transition text-sm font-bold"
+        >
+          ESPAÑOL
+        </button>
+        <button id="menu-close" class="text-gray-400 hover:text-white p-2">
+          <i class="fas fa-times text-3xl"></i>
+        </button>
+      </div>
+      <div
+        class="flex flex-col space-y-6 flex-grow justify-center items-center"
+      >
+        <a
+          href="#home"
+          class="nav-link text-2xl font-bold hover:text-cyan-400"
+          data-i18n="nav.home"
+          >Home</a
+        >
+        <a
+          href="#about"
+          class="nav-link text-2xl font-bold hover:text-cyan-400"
+          data-i18n="nav.about"
+          >About</a
+        >
+        <a
+          href="#projects"
+          class="nav-link text-2xl font-bold hover:text-cyan-400"
+          data-i18n="nav.projects"
+          >Projects</a
+        >
+        <a
+          href="#skills"
+          class="nav-link text-2xl font-bold hover:text-cyan-400"
+          data-i18n="nav.skills"
+          >Skills</a
+        >
+        <a
+          href="#certifications"
+          class="nav-link text-2xl font-bold hover:text-cyan-400"
+          data-i18n="nav.certifications"
+          >Certifications</a
+        >
+        <a
+          href="#contact"
+          class="nav-link text-2xl font-bold hover:text-cyan-400"
+          data-i18n="nav.contact"
+          >Contact</a
+        >
+      </div>
+      <div
+        class="flex justify-center space-x-8 mt-auto pt-8 border-t border-gray-800"
+      >
+        <a
+          href="https://github.com/Joel-D-Rodriguez"
+          target="_blank"
+          class="text-gray-400 hover:text-cyan-400 transition-colors"
+          ><i class="fab fa-github text-2xl"></i
+        ></a>
+        <a
+          href="https://linkedin.com/in/joel-dionicio-rodriguez-hidalgo"
+          target="_blank"
+          class="text-gray-400 hover:text-cyan-400 transition-colors"
+          ><i class="fab fa-linkedin-in text-2xl"></i
+        ></a>
+        <a
+          href="mailto:joerh0803@gmail.com"
+          class="text-gray-400 hover:text-cyan-400 transition-colors"
+          ><i class="fas fa-envelope text-2xl"></i
+        ></a>
+      </div>
+    </div>
+
+    <section
+      id="home"
+      class="min-h-screen flex flex-col justify-center items-center px-4 pt-20"
+    >
+      <div class="hero-content text-center max-w-5xl w-full">
+        <h1 class="futuristic mb-8">
+          <span
+            class="gradient-text block text-2xl sm:text-3xl md:text-5xl font-bold mb-4 leading-tight"
+            data-i18n="hero.greeting"
+            >Hi, I'm Joel Rodriguez</span
+          >
+          <span
+            class="text-white block text-2xl sm:text-4xl md:text-5xl font-light tracking-wide"
+            data-i18n="hero.role"
+            >Full-Stack Developer.</span
+          >
+        </h1>
+        <p
+          class="text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed"
+          data-i18n="hero.description"
+        >
+          I help businesses and entrepreneurs bring their ideas to life through
+          scalable web applications, custom websites, and optimized digital
+          platforms.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto"
+        >
+          <a
+            href="#contact"
+            class="btn-primary px-8 py-3 rounded-lg text-sm sm:text-base font-semibold uppercase tracking-wide"
+            data-i18n="hero.btnContact"
+            >Contact Me</a
+          >
+          <a
+            href="#projects"
+            class="btn-outline px-8 py-3 rounded-lg text-sm sm:text-base font-semibold uppercase tracking-wide"
+            data-i18n="hero.btnProjects"
+            >View Projects</a
+          >
+        </div>
+        <div class="mt-16 animate-bounce hidden sm:block">
+          <a href="#about" class="text-gray-500 hover:text-cyan-400 transition"
+            ><i class="fas fa-chevron-down text-2xl"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <h2
+        class="section-title text-3xl font-bold text-white mb-12 w-full text-center md:text-left"
+        data-i18n="about.title"
+      >
+        About Me
+      </h2>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-1 flex justify-center">
+          <div class="profile-photo-container">
+            <div class="profile-photo-frame"></div>
+            <div class="profile-photo-glow"></div>
+            <img
+              src="Images/pfft1.jpg"
+              alt="Joel D. Rodriguez"
+              class="profile-photo"
+            />
+          </div>
+        </div>
+        <div class="order-2 text-center md:text-left">
+          <p class="text-gray-300 mb-4 leading-relaxed" data-i18n="about.p1">
+            I am a Full-Stack Developer passionate about building modern web
+            solutions. My core stack includes
+            <strong class="text-cyan-400">React, Node.js, and Java</strong>,
+            with strong experience in building and consuming
+            <strong class="text-cyan-400">REST APIs</strong>.
+          </p>
+          <p class="text-gray-300 mb-4 leading-relaxed" data-i18n="about.p2">
+            What sets me apart is my certification in
+            <strong class="text-cyan-400">Prompt Engineering</strong>. I
+            integrate Artificial Intelligence into my development environment to
+            structure efficient services, optimize code, and deliver innovative
+            solutions.
+          </p>
+          <p class="text-gray-300 mb-8 leading-relaxed" data-i18n="about.p3">
+            I manage databases like
+            <strong class="text-cyan-400">MongoDB and MySQL</strong>. On the
+            frontend, I specialize in creating high-impact Landing Pages and
+            fully <strong class="text-cyan-400">Responsive</strong> designs
+            using Tailwind CSS and Feather Icons.
+          </p>
+          <a
+            href="#contact"
+            class="btn-primary px-8 py-3 rounded-lg inline-block"
+            data-i18n="about.btn"
+            >Get In Touch</a
+          >
+          <div class="mt-10 relative text-left">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg blur opacity-20"
+            ></div>
+            <div
+              class="relative bg-gray-900 rounded-lg p-6 border border-gray-800"
+            >
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <h4
+                    class="text-cyan-400 font-bold text-sm uppercase mb-1"
+                    data-i18n="skills.frontend"
+                  >
+                    Frontend & UI
+                  </h4>
+                  <p
+                    class="text-gray-400 text-xs"
+                    data-i18n="skills.frontendDesc"
+                  >
+                    React, Tailwind & Responsive Design
+                  </p>
+                </div>
+                <div>
+                  <h4
+                    class="text-cyan-400 font-bold text-sm uppercase mb-1"
+                    data-i18n="skills.backend"
+                  >
+                    Backend & APIs
+                  </h4>
+                  <p
+                    class="text-gray-400 text-xs"
+                    data-i18n="skills.backendDesc"
+                  >
+                    Node.js, Java & RESTful Services
+                  </p>
+                </div>
+                <div>
+                  <h4
+                    class="text-cyan-400 font-bold text-sm uppercase mb-1"
+                    data-i18n="skills.ai"
+                  >
+                    AI Solutions
+                  </h4>
+                  <p class="text-gray-400 text-xs" data-i18n="skills.aiDesc">
+                    Prompt Engineering & Automation
+                  </p>
+                </div>
+                <div>
+                  <h4
+                    class="text-cyan-400 font-bold text-sm uppercase mb-1"
+                    data-i18n="skills.data"
+                  >
+                    Data Management
+                  </h4>
+                  <p class="text-gray-400 text-xs" data-i18n="skills.dataDesc">
+                    MySQL & MongoDB Optimization
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <h2
+        class="section-title text-3xl font-bold text-white mb-12 w-full text-center"
+        data-i18n="titles.projects"
+      >
+        Featured Projects
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="project-card rounded-xl overflow-hidden">
+          <div class="swiper h-48 md:h-56 lg:h-64 w-full bg-gray-800">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="https://res.cloudinary.com/dakrch1kr/image/upload/f_auto,q_auto/v1776707409/UC_1_xoxonw.png"
+                  class="w-full h-full object-cover"
+                  alt="Vista principal del E-Commerce"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://res.cloudinary.com/dakrch1kr/image/upload/f_auto,q_auto/v1776707409/UC_4_zrizlg.png"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  alt="Shopping cart y proceso de compra"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://res.cloudinary.com/dakrch1kr/image/upload/f_auto,q_auto/v1776707637/UC_Shop_mvap0v.png"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  alt="Vista principal del E-Commerce API"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://res.cloudinary.com/dakrch1kr/image/upload/f_auto,q_auto/v1776707409/UC_5_j0qbgi.png"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  alt="Panel de usuario"
+                />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3
+              class="text-xl font-bold text-white mb-2"
+              data-i18n="proj.1.title"
+            >
+              U Closset | E-Commerce Platform
+            </h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="px-2 py-1 bg-gray-800 text-cyan-400 text-xs rounded border border-gray-700"
+                >React</span
+              >
+              <span
+                class="px-2 py-1 bg-gray-800 text-cyan-400 text-xs rounded border border-gray-700"
+                >TypeScript</span
+              >
+              <span
+                class="px-2 py-1 bg-gray-800 text-cyan-400 text-xs rounded border border-gray-700"
+                >NestJS</span
+              >
+              <span
+                class="px-2 py-1 bg-gray-800 text-cyan-400 text-xs rounded border border-gray-700"
+                >Prisma</span
+              >
+            </div>
+            <p
+              class="text-gray-400 text-sm mb-6 flex-grow"
+              data-i18n="proj.1.desc"
+            >
+              U Closset is a modern e-commerce frontend designed around the
+              concept of "Silent Luxury". The interface prioritizes minimalism,
+              typography, and negative space over clutter, delivering a high-end
+              shopping experience similar to top fashion houses.
+            </p>
+            <div class="flex gap-4 mt-auto">
+              <a
+                href="https://u-closset-e-commerce.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-cyan-400 text-sm font-bold hover:underline"
+                ><i class="fas fa-external-link-alt mr-1"></i> Demo</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="project-card rounded-xl overflow-hidden">
+          <div class="swiper h-48 md:h-56 lg:h-64 w-full bg-gray-800">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="https://res.cloudinary.com/dakrch1kr/image/upload/f_auto,q_auto/v1776707409/budget3_gr4jfs.png"
+                  class="w-full h-full object-cover"
+                  alt="Pantalla LogIn del Budget Tracker"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://res.cloudinary.com/dakrch1kr/image/upload/f_auto,q_auto/v1776707409/budget2_knya7d.png"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  alt="Dashboard del Budget Tracker"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://res.cloudinary.com/dakrch1kr/image/upload/f_auto,q_auto/v1776707409/budget1_z7uvcv.png"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  alt="Inventario del Budget Tracker"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://res.cloudinary.com/dakrch1kr/image/upload/f_auto,q_auto/v1776712011/pdf_budget_uelhjd.png"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  alt="Pdf generado del Budget Tracker"
+                />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3
+              class="text-xl font-bold text-white mb-2"
+              data-i18n="proj.2.title"
+            >
+              Budget Manager | ERP
+            </h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="px-2 py-1 bg-gray-800 text-cyan-400 text-xs rounded border border-gray-700"
+                >React</span
+              >
+              <span
+                class="px-2 py-1 bg-gray-800 text-cyan-400 text-xs rounded border border-gray-700"
+                >NestJS</span
+              >
+              <span
+                class="px-2 py-1 bg-gray-800 text-cyan-400 text-xs rounded border border-gray-700"
+                >PdfKit</span
+              >
+            </div>
+            <p
+              class="text-gray-400 text-sm mb-6 flex-grow"
+              data-i18n="proj.2.desc"
+            >
+              It is a lightweight and specialized ERP (Enterprise Resource
+              Planning), designed for the comprehensive management of events,
+              retreats, or conventions. It solves three fundamental problems of
+              real-time administration: financial control, lodging logistics,
+              and staff auditing.
+            </p>
+            <div class="flex gap-4 mt-auto">
+              <a
+                href="https://budget-manager-404-three.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-cyan-400 text-sm font-bold hover:underline"
+                ><i class="fas fa-external-link-alt mr-1"></i> Demo</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="project-card rounded-xl overflow-hidden">
+          <div class="swiper h-48 md:h-56 lg:h-64 w-full bg-gray-800">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="https://res.cloudinary.com/dakrch1kr/image/upload/f_auto,q_auto/v1776707410/donnaana1_bjybpf.png"
+                  class="w-full h-full object-cover"
+                  alt="Hero Donna Ana"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://res.cloudinary.com/dakrch1kr/image/upload/f_auto,q_auto/v1776707410/donnaana2_k33e2b.png"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  alt="Menu doña ana"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://res.cloudinary.com/dakrch1kr/image/upload/f_auto,q_auto/v1776707410/donnaana3_ewlita.png"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  alt="Carrito doña ana"
+                />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3
+              class="text-xl font-bold text-white mb-2"
+              data-i18n="proj.3.title"
+            >
+              Doña Ana | Digital Menu
+            </h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="px-2 py-1 bg-gray-800 text-cyan-400 text-xs rounded border border-gray-700"
+                >JavaScript</span
+              >
+              <span
+                class="px-2 py-1 bg-gray-800 text-cyan-400 text-xs rounded border border-gray-700"
+                >CSS</span
+              >
+              <span
+                class="px-2 py-1 bg-gray-800 text-cyan-400 text-xs rounded border border-gray-700"
+                >HTML</span
+              >
+              <span
+                class="px-2 py-1 bg-gray-800 text-cyan-400 text-xs rounded border border-gray-700"
+                >Strapi</span
+              >
+            </div>
+            <p
+              class="text-gray-400 text-sm mb-6 flex-grow"
+              data-i18n="proj.3.desc"
+            >
+              This project, titled "Digital Menu - Doña Ana", is a modern and
+              dynamic web application designed to digitize the ordering
+              experience in a restaurant, integrating a professional
+              administration panel for content management.
+            </p>
+            <div class="flex gap-4 mt-auto">
+              <a
+                href="https://inspiring-naiad-b0b9aa.netlify.app/#menu"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-cyan-400 text-sm font-bold hover:underline"
+                ><i class="fas fa-external-link-alt mr-1"></i> Demo</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <h2
+        class="section-title text-3xl font-bold text-white mb-12 w-full text-center"
+        data-i18n="titles.skills"
+      >
+        Technologies
+      </h2>
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6"
+      >
+        <div
+          class="tech-icon flex flex-col items-center p-4 rounded-lg bg-gray-900 bg-opacity-50 border border-gray-800"
+        >
+          <i class="fab fa-java text-4xl sm:text-5xl text-cyan-400 mb-3"></i>
+          <span class="text-gray-300 font-medium text-sm">Java</span>
+        </div>
+        <div
+          class="tech-icon flex flex-col items-center p-4 rounded-lg bg-gray-900 bg-opacity-50 border border-gray-800"
+        >
+          <i class="fas fa-leaf text-4xl sm:text-5xl text-cyan-400 mb-3"></i>
+          <span class="text-gray-300 font-medium text-sm">Spring Boot</span>
+        </div>
+        <div
+          class="tech-icon flex flex-col items-center p-4 rounded-lg bg-gray-900 bg-opacity-50 border border-gray-800"
+        >
+          <i
+            class="fab fa-react text-4xl sm:text-5xl text-cyan-400 mb-3 animate-spin-slow"
+          ></i>
+          <span class="text-gray-300 font-medium text-sm">React</span>
+        </div>
+        <div
+          class="tech-icon flex flex-col items-center p-4 rounded-lg bg-gray-900 bg-opacity-50 border border-gray-800"
+        >
+          <i class="fab fa-node-js text-4xl sm:text-5xl text-cyan-400 mb-3"></i>
+          <span class="text-gray-300 font-medium text-sm">Node.js</span>
+        </div>
+        <div
+          class="tech-icon flex flex-col items-center p-4 rounded-lg bg-gray-900 bg-opacity-50 border border-gray-800"
+        >
+          <i
+            class="fas fa-database text-4xl sm:text-5xl text-cyan-400 mb-3"
+          ></i>
+          <span class="text-gray-300 font-medium text-sm">MongoDB</span>
+        </div>
+        <div
+          class="tech-icon flex flex-col items-center p-4 rounded-lg bg-gray-900 bg-opacity-50 border border-gray-800"
+        >
+          <i class="fab fa-php text-4xl sm:text-5xl text-cyan-400 mb-3"></i>
+          <span class="text-gray-300 font-medium text-sm">PHP</span>
+        </div>
+        <div
+          class="tech-icon flex flex-col items-center p-4 rounded-lg bg-gray-900 bg-opacity-50 border border-gray-800"
+        >
+          <i class="fas fa-server text-4xl sm:text-5xl text-cyan-400 mb-3"></i>
+          <span class="text-gray-300 font-medium text-sm">MySQL</span>
+        </div>
+        <div
+          class="tech-icon flex flex-col items-center p-4 rounded-lg bg-gray-900 bg-opacity-50 border border-gray-800"
+        >
+          <i class="fab fa-js text-4xl sm:text-5xl text-cyan-400 mb-3"></i>
+          <span class="text-gray-300 font-medium text-sm">JavaScript</span>
+        </div>
+        <div
+          class="tech-icon flex flex-col items-center p-4 rounded-lg bg-gray-900 bg-opacity-50 border border-gray-800"
+        >
+          <i class="fab fa-html5 text-4xl sm:text-5xl text-cyan-400 mb-3"></i>
+          <span class="text-gray-300 font-medium text-sm">HTML5</span>
+        </div>
+        <div
+          class="tech-icon flex flex-col items-center p-4 rounded-lg bg-gray-900 bg-opacity-50 border border-gray-800"
+        >
+          <i
+            class="fab fa-css3-alt text-4xl sm:text-5xl text-cyan-400 mb-3"
+          ></i>
+          <span class="text-gray-300 font-medium text-sm">CSS3</span>
+        </div>
+        <div
+          class="tech-icon flex flex-col items-center p-4 rounded-lg bg-gray-900 bg-opacity-50 border border-gray-800"
+        >
+          <i class="fab fa-git-alt text-4xl sm:text-5xl text-cyan-400 mb-3"></i>
+          <span class="text-gray-300 font-medium text-sm">Git</span>
+        </div>
+        <div
+          class="tech-icon flex flex-col items-center p-4 rounded-lg bg-gray-900 bg-opacity-50 border border-gray-800"
+        >
+          <i
+            class="fas fa-project-diagram text-4xl sm:text-5xl text-cyan-400 mb-3"
+          ></i>
+          <span class="text-gray-300 font-medium text-sm">APIs</span>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="certifications"
+      class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+    >
+      <h2
+        class="section-title text-3xl font-bold text-white mb-12 w-full text-center"
+        data-i18n="titles.certifications"
+      >
+        Certifications
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="project-card rounded-xl overflow-hidden flex flex-col">
+          <div
+            class="swiper certification-swiper h-56 w-full bg-gray-800 cursor-grab"
+          >
+            <div
+              class="swiper-wrapper pdf-trigger"
+              data-pdf="Certificaciones/ia.pdf"
+            >
+              <div class="swiper-slide relative group">
+                <img
+                  src="Certificaciones/Prompting.png"
+                  class="w-full h-full object-cover"
+                  alt="Page 1"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition flex items-center justify-center"
+                >
+                  <i
+                    class="fas fa-search-plus text-white opacity-0 group-hover:opacity-100 text-3xl transition"
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3
+              class="text-xl font-bold text-white mb-2"
+              data-i18n="cert.1.title"
+            >
+              Prompt Engineering
+            </h3>
+            <p
+              class="text-gray-400 text-sm mb-4 flex-grow"
+              data-i18n="cert.1.desc"
+            >
+              Advanced techniques in AI communication.
+            </p>
+            <button
+              class="pdf-trigger btn-outline w-full py-2 rounded text-sm uppercase tracking-wider font-bold hover:bg-cyan-400 hover:text-black transition"
+              data-pdf="Certificaciones/ia.pdf"
+            >
+              <i class="fas fa-file-pdf mr-2"></i> View PDF
+            </button>
+          </div>
+        </div>
+        <div class="project-card rounded-xl overflow-hidden flex flex-col">
+          <div
+            class="swiper certification-swiper h-56 w-full bg-gray-800 cursor-grab"
+          >
+            <div
+              class="swiper-wrapper pdf-trigger"
+              data-pdf="Certificaciones/certificadoAlura.pdf"
+            >
+              <div class="swiper-slide relative group">
+                <img
+                  src="Certificaciones/DEV1.png"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition flex items-center justify-center"
+                >
+                  <i
+                    class="fas fa-search-plus text-white opacity-0 group-hover:opacity-100 text-3xl transition"
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3
+              class="text-xl font-bold text-white mb-2"
+              data-i18n="cert.2.title"
+            >
+              Full Stack Development
+            </h3>
+            <p
+              class="text-gray-400 text-sm mb-4 flex-grow"
+              data-i18n="cert.2.desc"
+            >
+              Comprehensive training in React & Node.
+            </p>
+            <button
+              class="pdf-trigger btn-outline w-full py-2 rounded text-sm uppercase tracking-wider font-bold hover:bg-cyan-400 hover:text-black transition"
+              data-pdf="Certificaciones/certificadoAlura.pdf"
+            >
+              <i class="fas fa-file-pdf mr-2"></i> View PDF
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div
+      id="pdf-viewer-modal"
+      class="fixed inset-0 z-[100] hidden bg-black bg-opacity-95 backdrop-blur-sm flex flex-col justify-center items-center p-4"
+    >
+      <div
+        class="absolute top-0 left-0 right-0 p-4 flex justify-between items-center bg-gray-900 border-b border-gray-800 z-[110]"
+      >
+        <span class="text-cyan-400 font-bold text-sm md:text-base"
+          >Visor de Certificados</span
+        >
+        <button
+          id="close-pdf-btn"
+          class="text-white hover:text-red-500 transition"
+        >
+          <i class="fas fa-times text-2xl md:text-3xl"></i>
+        </button>
+      </div>
+      <div
+        class="w-full h-full pt-16 pb-20 flex justify-center items-start overflow-auto"
+        id="pdf-container-scroll"
+      >
+        <canvas
+          id="pdf-render"
+          class="shadow-2xl border border-gray-700 max-w-full"
+        ></canvas>
+      </div>
+      <div
+        class="absolute bottom-0 left-0 right-0 p-4 bg-gray-900 border-t border-gray-800 flex justify-center items-center gap-6 z-[110]"
+      >
+        <button
+          id="prev-page"
+          class="text-white hover:text-cyan-400 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <i class="fas fa-chevron-left text-2xl"></i>
+        </button>
+        <span class="text-gray-300 text-sm">
+          Página
+          <span id="page-num" class="text-cyan-400 font-bold">--</span> de
+          <span id="page-count">--</span>
+        </span>
+        <button
+          id="next-page"
+          class="text-white hover:text-cyan-400 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <i class="fas fa-chevron-right text-2xl"></i>
+        </button>
+      </div>
+      <div
+        id="pdf-loader"
+        class="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50 z-[120] hidden"
+      >
+        <div
+          class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-cyan-400"
+        ></div>
+      </div>
+    </div>
+
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+      <h2
+        class="section-title text-3xl font-bold text-white mb-12 w-full text-center"
+        data-i18n="titles.contact"
+      >
+        Get In Touch
+      </h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="order-2 md:order-1">
+          <h3 class="text-xl font-bold text-white mb-4">Contact Info</h3>
+          <p class="text-gray-400 mb-8">
+            Feel free to reach out if you're looking for a developer, have a
+            question, or just want to connect.
+          </p>
+          <div class="space-y-6">
+            <div
+              class="flex items-center p-4 bg-gray-900 rounded-lg border border-gray-800"
+            >
+              <i class="fas fa-envelope text-cyan-400 mr-4 text-xl"></i>
+              <span class="text-gray-300 text-sm break-all"
+                >joel_0004@outlook.com</span
+              >
+            </div>
+            <div
+              class="flex items-center p-4 bg-gray-900 rounded-lg border border-gray-800"
+            >
+              <i class="fas fa-map-marker-alt text-cyan-400 mr-4 text-xl"></i>
+              <span class="text-gray-300 text-sm">Santo Domingo, RD</span>
+            </div>
+          </div>
+        </div>
+        <div class="order-1 md:order-2">
+          <form id="contact-form" class="space-y-4">
+            <div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                class="form-input w-full px-4 py-3 rounded-lg bg-gray-900 border-gray-800 text-white focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+              />
+            </div>
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                class="form-input w-full px-4 py-3 rounded-lg bg-gray-900 border-gray-800 text-white focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+              />
+            </div>
+            <div>
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Your Message"
+                required
+                class="form-input w-full px-4 py-3 rounded-lg bg-gray-900 border-gray-800 text-white focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="btn-primary w-full px-6 py-4 rounded-lg font-bold uppercase tracking-wider text-sm"
+            >
+              Send Message
+            </button>
+          </form>
+          <div
+            id="form-message"
+            class="hidden mt-4 text-center text-sm font-bold"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <button class="whatsapp-fab" id="waFab" aria-label="Contactar por WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </button>
+
+    <div class="wa-modal" id="waModal" aria-hidden="true">
+      <div class="wa-card" role="dialog" aria-modal="true">
+        <button class="wa-close" id="waClose" aria-label="Cerrar">
+          &times;
+        </button>
+        <h3 class="text-xl font-bold mb-4 text-cyan-400">Chat on WhatsApp</h3>
+        <form id="waForm">
+          <input type="text" name="name" placeholder="Tu nombre" required />
+          <textarea
+            name="message"
+            placeholder="¿Cómo puedo ayudarte?"
+            rows="4"
+            required
+          ></textarea>
+          <input
+            type="text"
+            name="company"
+            tabindex="-1"
+            autocomplete="off"
+            class="hidden"
+          />
+          <button
+            type="submit"
+            class="wa-submit btn-primary w-full py-3 rounded-lg font-bold mt-2"
+          >
+            Start Chat
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <footer
+      class="bg-black text-gray-500 py-8 border-t border-gray-900 pb-24 md:pb-8"
+    >
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <p class="mb-4 font-semibold text-gray-400">Full-Stack Developer Jr</p>
+        <div class="flex justify-center space-x-6 mb-6">
+          <a href="#" class="hover:text-cyan-400 transition"
+            ><i class="fab fa-github text-xl"></i
+          ></a>
+          <a href="#" class="hover:text-cyan-400 transition"
+            ><i class="fab fa-linkedin text-xl"></i
+          ></a>
+        </div>
+        <p class="text-xs">&copy; 2026 Joel Rodríguez. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  </body>
+</html>
