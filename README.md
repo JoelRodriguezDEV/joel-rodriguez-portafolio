@@ -44,6 +44,12 @@ Uso intensivo de la API de Cloudinary para servir imágenes en formatos de próx
 
 - **Tech:** JavaScript Nativo, CSS, HTML, Strapi.
 
+## Licencia y Derechos de Autor
+
+El código fuente (HTML, CSS, JavaScript) de este sitio web está disponible bajo la [Licencia MIT](LICENSE). Siéntete libre de clonarlo o inspirarte en la arquitectura para construir tu propio portafolio.
+
+**Aviso de Propiedad Intelectual:** Los recursos gráficos personales (fotografías, logotipos), los textos descriptivos de los proyectos, la marca "U Closset" y los documentos en formato PDF (certificaciones) son activos de uso exclusivo y están protegidos por derechos de autor (Copyright © 2026 Joel Rodríguez). No está permitido su uso, reproducción, modificación o distribución sin autorización expresa.
+
 ## Entorno Local
 
 1. Clona el repositorio:
